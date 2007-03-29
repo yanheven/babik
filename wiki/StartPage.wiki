@@ -1,6 +1,5 @@
-#Babik start page.
+= Babik start page =
 
 = Introduction =
 
 Babik seaks to be a lightweight easy to use and install mpd client.  Built on [http://djangoproject.com django] and using [http://incise.org/index.cgi/py-libmpdclient2 py-libmpdclient] as a code base.
-
