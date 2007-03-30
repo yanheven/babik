@@ -53,6 +53,14 @@ div.controls input, div.volume a {
     background-color: transparent;
     border: none;
     }
+div.controls input:hover, div.volume a:hover {
+    background-color: #cacfb1;
+    }
+
+div.controls input:active, div.volume a:active {
+    background-color: #cacfb1;
+    color: black;
+    }
 div.controls, div.disabled input {
     color: #a0a0a0;
     }
