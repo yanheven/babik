@@ -12,26 +12,51 @@
     margin-left: auto;
     margin-right: auto;
     }
-#controller form, p {
+
+h3.currentsong {
+    }
+p.title {
+    font-size: 1.4em;
+    }
+p.artist {
+    font-style: italic;
+    }
+p.artist {
+    padding-left: 8px;
+    }
+
+div.time {
+    margin-top: 10px;
+    }
+
+div.volume {
+    float: right;
+    width: 10em;
+    text-align: right;
+    }
+div.volume a {
+    font-size: 1.5em;
+    font-weight: bold;
+    }
+
+/* Controls */
+div.controls {
+    }
+
+div.controls form {
     display: inline;
     }
-#controller form {
-    padding-left: 5px;
-    padding-right: 5px;
-    }
-#controller input {
+
+div.controls input, div.volume a {
     font-size: 1.2em;
+    font-weight: bold;
+    background-color: transparent;
+    border: none;
     }
-#controller div.disabled input {
+div.controls, div.disabled input {
     color: #a0a0a0;
     }
 
-#controller div.controls {
-    margin-bottom: 10px;
-    }
-h3.currentsong {
-    margin-bottom: 10px;
-    }
-div.volume {
-    margin-top: 5px;
+div.controls {
+    margin-top: 10px;
     }
