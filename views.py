@@ -1,7 +1,7 @@
 import mpdclient2
 from django.shortcuts import render_to_response, get_object_or_404
 from django.http import HttpResponseRedirect, Http404, HttpResponsePermanentRedirect
-from django.conf import settings
+from django.template import RequestContext
 
 def get_track_time(time_status):
         time_list = time_status.split(':')
@@ -15,10 +15,12 @@ def get_track_time(time_status):
 def index(request):
     return HttpResponseRedirect('/playlist')
 
+def render_with_request(request, template, context={}):
+    return render_to_response(template, context, context_instance=RequestContext(request))
+
 def playlist(request):
     context = {'next': request.path,
                'page': "playlist",
-               'media_url': settings.MEDIA_URL,
                }
     try:
         m = mpdclient2.connect()
@@ -40,12 +42,11 @@ def playlist(request):
     else:
         context = {'errors': ['could not connect to server']}
 
-    return render_to_response('babik/playlist.html', context)
+    return render_with_request(request, 'babik/playlist.html', context)
 
 def browse(request, path):
     context = {'next': request.path,
                'page': "browse",
-               'media_url': settings.MEDIA_URL,
                }
 
     try:
@@ -73,7 +74,7 @@ def browse(request, path):
     else:
         context = {'errors': ['could not connect to server']}
 
-    return render_to_response('babik/browse.html', context)
+    return render_with_request(request, 'babik/browse.html', context)
 
 def controller(request, action, songid=None):
     context = {}
