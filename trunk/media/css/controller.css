@@ -47,17 +47,18 @@ div.controls form {
     display: inline;
     }
 
-div.controls input, div.volume a {
+div.controls input, div.volume input {
     font-size: 1.2em;
     font-weight: bold;
     background-color: transparent;
     border: none;
+    cursor: pointer;
     }
-div.controls input:hover, div.volume a:hover {
+div.controls input:hover, div.volume input:hover {
     background-color: #cacfb1;
     }
 
-div.controls input:active, div.volume a:active {
+div.controls input:active, div.volume input:active {
     background-color: #cacfb1;
     color: black;
     }

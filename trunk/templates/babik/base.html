@@ -31,7 +31,15 @@
         {% if status %}
         <div class="volume">
             <span><strong>Volume:</strong> {{ status.volume }}</span>
-            &nbsp;<a href="/controller/volume_down/">-</a>&nbsp;<a href="/controller/volume_up/">+</a> 
+            &nbsp;
+            <form class="volume down" action="/controller/volume_down/" method="post">
+                <input type="hidden" name="next" value="{{ next }}" />
+                <input type="submit" value="-" />
+            </form>
+            <form class="volume up" action="/controller/volume_up/" method="post">
+                <input type="hidden" name="next" value="{{ next }}" />
+                <input type="submit" value="+" />
+            </form>
         </div>
         {% endif %}
 
